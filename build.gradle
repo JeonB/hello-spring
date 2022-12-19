@@ -5,7 +5,7 @@ plugins {
 }
 
 jar {
-	enabled = false
+	enabled = false // 의존성  포함하지 않는 plain 파일 생성X
 }
 
 group = 'hello'
