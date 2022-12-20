@@ -1,5 +1,4 @@
 package hello.hellospring.controller;
-
 import hello.hellospring.domain.Member;
 import hello.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,3 +40,4 @@ public class MemberController {
         return "members/memberList";
     }
 }
+

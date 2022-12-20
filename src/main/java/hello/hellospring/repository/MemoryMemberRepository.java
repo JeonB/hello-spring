@@ -7,8 +7,8 @@ import java.util.*;
 
 public class MemoryMemberRepository implements MemberRepository {
 
-    private static Map<Long, Member> store = new HashMap<>();
-    private static long sequence = 0L;
+    private static Map<Long, Member> store = new HashMap<>(); // ID, 회원 매핑
+    private static long sequence = 0L; // 키 값 생성 변수
 
     @Override
     public Member save(Member member) {
@@ -19,7 +19,7 @@ public class MemoryMemberRepository implements MemberRepository {
 
     @Override
     public Optional<Member> findById(Long id) {
-        return Optional.ofNullable(store.get(id));
+        return Optional.ofNullable(store.get(id)); //id가 null일 가능성도 있기에 Optional사용
     }
 
     @Override
@@ -36,6 +36,5 @@ public class MemoryMemberRepository implements MemberRepository {
 
     public void clearStore(){
         store.clear();
-
     }
 }
