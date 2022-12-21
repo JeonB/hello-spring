@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
-@Controller
+@Controller  // @Controller가 있으면 스프링 컨테이너에 해당 객체를 넣어 둠(MemberController객체 생성하여 스프링에 넣어둠)
 public class MemberController {
     private final MemberService memberService;
 
-    @Autowired
+    @Autowired //생성자에 @Autowired가 있으면 스프링이 연관된 객체를 스프링 컨테이너에서 찾아서 넣어줌
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
     }

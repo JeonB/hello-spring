@@ -16,7 +16,7 @@ class MemberServiceTest {
     MemberService memberService;
     MemoryMemberRepository memberRepository;
 
-    @BeforeEach
+    @BeforeEach // 테스트가 서로 영향이 없도록 항상 새로운 객체 생성하고 의존관계도 새로 맺어줌
     public void beforeEach(){
         memberRepository = new MemoryMemberRepository();
         memberService = new MemberService(memberRepository);
@@ -53,6 +53,7 @@ class MemberServiceTest {
         //when
         memberService.join(member1);
         IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
+                                //assertThrows : 만약 이 때 중복회원예외가 발생했다면 예외처리 메시지 출력됨. IllegalStateException 리턴함
 
         assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
 

@@ -8,8 +8,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+
 public class MemberService {
+
+    // 기존에는 회원 서비스가 메모리 회원 리포지토리를 직접 생성하게 함
+    // private final MemberRepository memberRepository = new MemoryMemberRepository();
     private final MemberRepository memberRepository;
 
     public MemberService(MemberRepository memberRepository) {
