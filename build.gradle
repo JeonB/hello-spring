@@ -25,7 +25,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	implementation 'javax.validation:validation-api:2.0.1.Final'
-	implementation 'org.hibernate.validator:hibernate-validator:6.0.18.Final'
+	implementation 'org.hibernate.validator:hibernate-validator:6.0.21.Final'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
