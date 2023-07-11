@@ -2,7 +2,6 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,7 +25,7 @@ public class MemberService {
     public Long join(Member member){
 
         validateDuplicateMember(member); //중복 회원 검증
-        memberRepository.save(member);
+        memberRepository.save(member); //JpaRepository<T,ID>가 상속 받는 org.springframework.data.repository.CrudRepository에 save메소드 구현되어 있음
         return member.getId();
     }
 
