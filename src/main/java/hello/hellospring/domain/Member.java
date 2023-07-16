@@ -4,8 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 @Entity
+@Table(name = "member", schema = "tester")
 public class Member {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)//DB가 알아서 생성
